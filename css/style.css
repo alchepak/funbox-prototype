@@ -6,7 +6,9 @@
   font-style: normal;
 }
 
-html {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -29,7 +31,7 @@ body {
 }
 
 .wrapper__title {
-  font-family: "Exo", Arial, Helvetica, sans-serif;
+  font-family: "Exo", Arial, sans-serif;
   font-size: 36px;
   font-weight: normal;
   line-height: 1;
@@ -43,4 +45,47 @@ body {
   padding: 0;
 
   list-style: none;
+}
+
+.cards__item {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  width: 312px;
+  min-height: 472px;
+  margin-right: 88px;
+  padding-left: 45px;
+
+  background: linear-gradient(135deg, transparent 42px, #ffffff 42px);
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.cards__item:last-child {
+  margin-right: 0;
+}
+
+.cards__item::before {
+  content: "";
+
+  position: absolute;
+  top: -4px;
+  left: -4px;
+
+  box-sizing: content-box;
+  width: 100%;
+  min-height: 100%;
+  padding: 4px;
+
+  background: linear-gradient(135deg, transparent 42px, #1698d9 42px);
+  border-radius: 9px;
+  z-index: -1;
+}
+
+.cards__item h2 {
+  color: #000000;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  font-size: 48px;
+  line-height: 1;
 }
