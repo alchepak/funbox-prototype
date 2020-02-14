@@ -1,43 +1,46 @@
 @font-face {
-    font-family: 'Exo';
-    src: url('../fonts/Exo2.0-Thin.woff') format('woff'),
-         url('../fonts/Exo2.0-Thin.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  } 
+  font-family: 'Exo';
+  src: url('../fonts/Exo2.0-Thin.woff') format('woff'),
+       url('../fonts/Exo2.0-Thin.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  box-sizing: border-box;
+}
 
 body {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    color: #ffffff;
-    
-    background-color: #000000; /* fallback */
-    /* background-image: url("../img/back-pattern.jpg"); */
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 50%, rgba(0, 0, 0, 0.5) 100%), url("../img/back-pattern.jpg");
+  color: #ffffff;
+
+  background-color: #000000; /* fallback */
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 50%, rgba(0, 0, 0, 0.5) 100%), url("../img/back-pattern.jpg");
 }
 
 .wrapper {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .wrapper__title {
-    font-family: "Exo", Arial, Helvetica, sans-serif;
-    font-size: 36px;
-    font-weight: normal;
-    line-height: 1;
+  font-family: "Exo", Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  line-height: 1;
 
-    margin: 0;
-    margin-bottom: 23px;
+  margin: 0;
+  margin-bottom: 23px;
 }
 
 .cards {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    list-style: none;
+  list-style: none;
 }
