@@ -23,8 +23,9 @@ body {
   color: #ffffff;
   font-family: 'Trebuchet MS', Arial, sans-serif;
 
-  background-color: #000000; /* fallback */
+  background-color: #000000;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 50%, rgba(0, 0, 0, 0.5) 100%), url("../img/back-pattern.jpg");
+  background-attachment: fixed; /* в тз нет, но мне кажется, так фон смотрится лучше, если элементов будет много */
 }
 
 /* wrapper */
@@ -34,6 +35,8 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .wrapper__title {
@@ -46,12 +49,9 @@ body {
   margin: 0;
 }
 
-/* cards list */
+/* cards list - mobile first */
 
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-
   margin: 0;
   padding: 0;
 
@@ -60,15 +60,47 @@ body {
 
 .cards > li {
   position: relative;
-
-  display: flex;
-  flex-direction: column;
-  margin-right: 80px;
   padding-top: 27px;
 }
 
-.cards > li:last-child {
-  margin-right: 0;
+/* cards list - tablets */
+
+@media screen and (min-width: 768px) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 720px;
+  }
+
+  .cards > li {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cards > li:nth-child(2n+1) {
+    margin-right: 80px;
+  }
+
+  .cards > li:last-child {
+    margin-right: 0;
+  }
+}
+
+/* cards list - desktop */
+
+@media screen and (min-width: 1200px) {
+  .cards {
+    max-width: 1200px;
+  }
+
+  .cards > li {
+    margin-right: 80px;
+  }
+
+  .cards > li:nth-child(3n) {
+    margin-right: 0;
+  }
 }
 
 /* cards - item */
@@ -79,6 +111,7 @@ body {
   display: flex;
   width: 320px;
   min-height: 480px;
+  margin: 0 auto; /* for mobile */
   padding: 4px;
 
   color: #000000;
@@ -93,8 +126,12 @@ body {
 /* cards item - elements */
 
 .cards_item__content {
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 472px;
   padding-top: 19px;
+  padding-bottom: 279px;
   padding-left: 44px;
 
   background-image: url("../img/cat.jpg"), linear-gradient(135deg, transparent 30px, #ffffff 30px);
@@ -150,19 +187,23 @@ body {
   right: 15px;
 
   display: flex;
+
+  background-color: #1698d9;
+  border-radius: 50%;
+}
+
+.cards_item__price p {
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 81px;
-  height: 81px;
+  min-width: 81px;
+  min-height: 81px;
   margin: 0;
 
   color: #ffffff;
   font-size: 21px;
   line-height: 22px;
   text-align: center;
-
-  background-color: #1698d9;
-  border-radius: 50%;
 }
 
 .cards_item__price span {
@@ -175,8 +216,10 @@ body {
 .cards_item__caption {
   display: none;
   width: 320px;
-  margin: 0;
   margin-top: 14px;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
 
   color: #ffffff;
   font-size: 13px;
