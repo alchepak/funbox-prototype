@@ -62,8 +62,8 @@ body {
   position: relative;
 
   display: flex;
+  flex-direction: column;
   margin-right: 80px;
-  margin-bottom: 30px;
   padding-top: 27px;
 }
 
@@ -76,6 +76,7 @@ body {
 .cards_item {
   position: relative;
 
+  display: flex;
   width: 320px;
   min-height: 480px;
   padding: 4px;
@@ -92,8 +93,7 @@ body {
 /* cards item - elements */
 
 .cards_item__content {
-  width: 100%;
-  height: 100%;
+  flex-grow: 1;
   padding-top: 19px;
   padding-left: 44px;
 
@@ -111,7 +111,7 @@ body {
   line-height: 16px;
 }
 
-.cards_item__description.just_selected {
+.cards_item__description.selected {
   display: none;
   color: #e62e7a;
 }
@@ -173,13 +173,10 @@ body {
 /* cards item - caption */
 
 .cards_item__caption {
-  position: absolute;
-  left: 0;
-  bottom: -30px;
-
   display: none;
-  width: 100%;
+  width: 320px;
   margin: 0;
+  margin-top: 14px;
 
   color: #ffffff;
   font-size: 13px;
@@ -224,13 +221,13 @@ body {
 
 /* cards item - selected */
 
-.cards_item--just_selected .default {
+.cards_item--selected:hover .default {
   display: none;
 }
 
-.cards_item--just_selected .just_selected,
 .cards_item--just_selected ~ .selected,
-.cards_item--selected ~ .selected {
+.cards_item--selected ~ .selected,
+.cards_item--selected:hover .selected {
   display: block;
 }
 
