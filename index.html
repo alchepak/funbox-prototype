@@ -15,7 +15,12 @@
         <ul class="cards">
 
           <li>
-            <article class="cards_item cards_item--default">
+            <!-- скрытые checkbox и label добавил для доступности выбора, если не загрузятся стили и скрипты; также с помощью checkbox реализована смена стилей карточек и скрипт выбора продукта по нажатию на карточку -->
+
+            <input class="visually_hidden product_checkbox" type="checkbox" name="productFuaGra" id="product_fua_gra">
+            <label class="visually_hidden" for="product_fua_gra">Выбрать продукт: Нямушка с фуа-гра</label>
+
+            <article class="cards_item">
               <div class="cards_item__content">
                 <p class="cards_item__description default">Сказочное заморское яство</p>
                 <p class="cards_item__description selected">Котэ не одобряет?</p>
@@ -40,7 +45,10 @@
           </li>
 
           <li>
-            <article class="cards_item cards_item--selected">
+            <input class="visually_hidden product_checkbox" type="checkbox" name="productFish" id="product_fish">
+            <label class="visually_hidden" for="product_fish">Выбрать продукт: Нямушка с рыбой</label>
+
+            <article class="cards_item just_selected">
               <div class="cards_item__content">
                 <p class="cards_item__description default">Сказочное заморское яство</p>
                 <p class="cards_item__description selected">Котэ не одобряет?</p>
@@ -65,7 +73,10 @@
           </li>
 
           <li>
-            <article class="cards_item cards_item--disabled">
+            <input class="visually_hidden product_checkbox" type="checkbox" name="productChicken" id="product_chicken" disabled>
+            <label class="visually_hidden" for="product_chicken">Выбрать продукт: Нямушка с курой</label>
+
+            <article class="cards_item">
               <div class="cards_item__content">
                 <p class="cards_item__description default">Сказочное заморское яство</p>
                 <p class="cards_item__description selected">Котэ не одобряет?</p>

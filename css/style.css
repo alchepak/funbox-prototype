@@ -243,15 +243,15 @@ body {
 
 /* cards item - default */
 
-.cards_item--default ~ .default {
+.product_checkbox:not(:checked):not(:disabled) ~ .default {
   display: block;
 }
 
-.cards_item--default:hover {
+.cards_item:hover {
   background-image: linear-gradient(135deg, transparent 31px, #2ea8e6 31px);
 }
 
-.cards_item--default:hover .cards_item__price {
+.cards_item:hover .cards_item__price {
   background-color: #2ea8e6;
 }
 
@@ -264,60 +264,79 @@ body {
 
 /* cards item - selected */
 
-.cards_item--selected:hover .default {
+.product_checkbox:checked ~ .cards_item:not(.just_selected):hover .default {
   display: none;
 }
 
-.cards_item--just_selected ~ .selected,
-.cards_item--selected ~ .selected,
-.cards_item--selected:hover .selected {
+.product_checkbox:checked ~ .cards_item:not(.just_selected):hover .selected,
+.product_checkbox:checked ~ .selected {
   display: block;
 }
 
-.cards_item--just_selected,
-.cards_item--selected {
+.product_checkbox:checked ~ .cards_item {
   background-image: linear-gradient(135deg, transparent 31px, #d91667 31px);
 }
 
-.cards_item--just_selected .cards_item__price,
-.cards_item--selected .cards_item__price {
+.product_checkbox:checked ~ .cards_item .cards_item__price {
   background-color: #d91667;
 }
 
-.cards_item--selected:hover {
+.product_checkbox:checked ~ .cards_item:hover {
   background-image: linear-gradient(135deg, transparent 31px, #e62e7a 31px);
 }
 
-.cards_item--selected:hover .cards_item__price {
+.product_checkbox:checked ~ .cards_item:hover .cards_item__price {
   background-color: #e62e7a;
 }
 
 /* cards item - disabled */
 
-.cards_item--disabled ~ .disabled {
+.product_checkbox:disabled ~ .disabled {
   display: block;
 }
 
-.cards_item--disabled {
+.product_checkbox:disabled ~ .cards_item {
   color: #d4d4d4;
 
   background-image: linear-gradient(135deg, transparent 31px, #b3b3b3 31px);
   cursor: default;
 }
 
-.cards_item--disabled .cards_item__content {
+.product_checkbox:disabled ~ .cards_item .cards_item__content {
   background-image: linear-gradient(135deg, transparent 30px, rgba(255, 255, 255, 0.5) 30px), url("../img/cat.jpg"), linear-gradient(135deg, transparent 30px, #ffffff 30px);
 }
 
-.cards_item--disabled .cards_item__description,
-.cards_item--disabled .cards_item__advantages {
+.product_checkbox:disabled ~ .cards_item .cards_item__description,
+.product_checkbox:disabled ~ .cards_item .cards_item__advantages {
   color: #d4d4d4;
 }
 
-.cards_item--disabled .cards_item__price {
+.product_checkbox:disabled ~ .cards_item .cards_item__price {
   background-color: #b3b3b3;
 }
 
-.cards_item--disabled ~ .cards_item__caption {
+.product_checkbox:disabled ~ .cards_item__caption {
   color: #ffff66;
+}
+
+/* cards item - checkbox focus */
+
+.product_checkbox:focus ~ .cards_item {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: rgba(21, 156, 228, 0.5);
+  outline-offset: 4px;
+}
+
+/*  */
+
+.visually_hidden {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
 }
