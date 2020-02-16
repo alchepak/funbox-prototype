@@ -8,28 +8,35 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <div class="prototype"></div>
+
     <div class="wrapper">
       <div class="container">
         <h1 class="wrapper__title">Ты сегодня покормил кота?</h1>
 
         <ul class="cards">
-          <li class="cards__item">
-            <h2 class="cards__title">Нямушка</h2>
-            <p>с фуа-гра</p>
 
-            <p>Сказочное заморское яство</p>
+          <li class="cards_item cards_item--default">
+            <p class="cards_item__description">Сказочное заморское яство</p>
 
-            <ul>
-              <li>10 порций</li>
+            <h2 class="cards_item__title">Нямушка</h2>
+            <p class="cards_item__subtitle">с фуа-гра</p>
+
+            <ul class="cards_item__advantages">
+              <li><b>10</b> порций</li> <!-- использован тег b, поскольку полужирное выделение в данном случае не придаёт тексту особой важности -->
               <li>мышь в подарок</li>
             </ul>
 
-            <p><span>0,5</span>кг</p>
+            <p class="cards_item__price">
+              <span>0,5</span>кг
+            </p>
 
-            <p>Чего сидишь? Порадуй котэ, <a href="#">купи.</a></p>
-            <p>Печень утки разварная с артишоками.</p>
-            <p>Печалька, с фуа-гра закончился</p>
+            <p class="cards_item__caption cards_item__caption--default">Чего сидишь? Порадуй котэ, <a href="#">купи</a></p>
+            <p class="cards_item__caption cards_item__caption--selected">Печень утки разварная с артишоками.</p>
+            <p class="cards_item__caption cards_item__caption--disabled">Печалька, с фуа-гра закончился</p>
           </li>
+
+
         </ul>
       </div>
     </div>

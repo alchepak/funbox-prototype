@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Exo';
+  font-family: "Exo";
   src: url('../fonts/Exo2.0-Thin.woff') format('woff'),
        url('../fonts/Exo2.0-Thin.woff2') format('woff2');
   font-weight: normal;
@@ -9,14 +9,19 @@
 *,
 *::before,
 *::after {
+  box-sizing: inherit;
+}
+
+html {
   box-sizing: border-box;
 }
 
 body {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 
   color: #ffffff;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
 
   background-color: #000000; /* fallback */
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 50%, rgba(0, 0, 0, 0.5) 100%), url("../img/back-pattern.jpg");
@@ -25,7 +30,6 @@ body {
 .wrapper {
   display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
   min-height: 100vh;
 }
@@ -34,39 +38,53 @@ body {
   font-family: "Exo", Arial, sans-serif;
   font-size: 36px;
   font-weight: normal;
-  line-height: 1;
+  line-height: 36px;
+  text-align: center;
 
   margin: 0;
-  margin-bottom: 23px;
+  margin-bottom: 27px;
 }
 
 .cards {
+  display: flex;
+  flex-wrap: wrap;
+
   margin: 0;
   padding: 0;
 
   list-style: none;
 }
 
-.cards__item {
+.cards_item {
   position: relative;
 
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   width: 312px;
   min-height: 472px;
-  margin-right: 88px;
-  padding-left: 45px;
+  margin: 4px;
+  margin-right: 84px;
+  padding-left: 44px;
 
-  background: linear-gradient(135deg, transparent 42px, #ffffff 42px);
+  color: #000000;
+
+  background: url("../img/cat.jpg"), linear-gradient(135deg, transparent 30px, #ffffff 30px);
+  background-repeat: no-repeat;
+  background-position: left bottom;
   border-radius: 9px;
   cursor: pointer;
 }
 
-.cards__item:last-child {
-  margin-right: 0;
+.cards_item:last-child {
+  margin-right: 4px;
 }
 
-.cards__item::before {
+.cards_item,
+.cards_item::before {
+  border-radius: 9px;
+}
+
+.cards_item::before {
   content: "";
 
   position: absolute;
@@ -78,14 +96,133 @@ body {
   min-height: 100%;
   padding: 4px;
 
-  background: linear-gradient(135deg, transparent 42px, #1698d9 42px);
-  border-radius: 9px;
+  background: linear-gradient(135deg, transparent 31px, #1698d9 31px);
   z-index: -1;
 }
 
-.cards__item h2 {
+.cards_item__title {
+  margin: 0;
+  margin-top: 10px;
+
   color: #000000;
-  font-family: 'Trebuchet MS', Arial, sans-serif;
   font-size: 48px;
-  line-height: 1;
+  line-height: 48px;
+}
+
+.cards_item__subtitle {
+  margin: 0;
+  margin-top: 4px;
+
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.cards_item__description {
+  margin: 0;
+  margin-top: 19px;
+
+  color: #666666;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.cards_item__advantages {
+  margin-top: 17px;
+  padding: 0;
+
+  color: #666666;
+  font-size: 14px;
+  line-height: 16px;
+
+  list-style: none;
+}
+
+.cards_item__price {
+  position: absolute;
+  bottom: 11px;
+  right: 11px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 81px;
+  height: 81px;
+  margin: 0;
+
+  color: #ffffff;
+  font-size: 21px;
+  line-height: 22px;
+  text-align: center;
+
+  background-color: #1698d9;
+  border-radius: 50%;
+}
+
+.cards_item__price span {
+  font-size: 42px;
+  line-height: 42px;
+}
+
+/* cards item - caption */
+
+.cards_item__caption {
+  position: absolute;
+  left: 0;
+  bottom: -34px;
+
+  width: 100%;
+  margin: 0;
+
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+}
+
+.cards_item__caption a {
+  position: relative;
+
+  color: #1698d9;
+  text-decoration: none;
+
+  border-bottom: 1px dashed #1698d9;
+}
+
+.cards_item__caption a::after {
+  content: ".";
+  position: absolute;
+}
+
+/* cards item - elements states */
+
+.cards_item__caption--selected,
+.cards_item__caption--disabled {
+  display: none;
+}
+
+.cards_item--selected .cards_item__caption--selected,
+.cards_item--disabled .cards_item__caption--disabled {
+  display: block;
+}
+
+/* prototype */
+
+.prototype {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: none;
+  width: 1120px;
+  height: 565px;
+  margin-left: -560px;
+  margin-top: -282px;
+
+  background-image: url("../../funbox/prototype.jpg");
+  background-repeat: no-repeat;
+  background-position: center calc(50% + 17px);
+  opacity: 0;
+  /* opacity: 0.5; */
+  z-index: 1;
 }
