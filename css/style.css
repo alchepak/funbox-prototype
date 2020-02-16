@@ -96,7 +96,7 @@ body {
   padding-top: 19px;
   padding-left: 44px;
 
-  background: url("../img/cat.jpg"), linear-gradient(135deg, transparent 30px, #ffffff 30px);
+  background-image: url("../img/cat.jpg"), linear-gradient(135deg, transparent 30px, #ffffff 30px);
   background-repeat: no-repeat;
   background-position: left bottom;
   border-radius: inherit;
@@ -119,7 +119,6 @@ body {
   margin: 0;
   margin-top: 10px;
 
-  color: #000000;
   font-size: 48px;
   line-height: 48px;
 }
@@ -201,21 +200,11 @@ body {
   position: absolute;
 }
 
-/* cards item - elements states */
+/* cards item - default */
 
-.cards_item--just_selected .default {
-  display: none;
-}
-
-.cards_item--default ~ .default,
-.cards_item--just_selected .just_selected,
-.cards_item--just_selected ~ .selected,
-.cards_item--selected ~ .selected,
-.cards_item--disabled ~ .disabled {
+.cards_item--default ~ .default {
   display: block;
 }
-
-/* cards item - default hover */
 
 .cards_item--default:hover {
   background-image: linear-gradient(135deg, transparent 31px, #2ea8e6 31px);
@@ -234,6 +223,16 @@ body {
 
 /* cards item - selected */
 
+.cards_item--just_selected .default {
+  display: none;
+}
+
+.cards_item--just_selected .just_selected,
+.cards_item--just_selected ~ .selected,
+.cards_item--selected ~ .selected {
+  display: block;
+}
+
 .cards_item--just_selected,
 .cards_item--selected {
   background-image: linear-gradient(135deg, transparent 31px, #d91667 31px);
@@ -250,6 +249,36 @@ body {
 
 .cards_item--selected:hover .cards_item__price {
   background-color: #e62e7a;
+}
+
+/* cards item - disabled */
+
+.cards_item--disabled ~ .disabled {
+  display: block;
+}
+
+.cards_item--disabled {
+  color: #d4d4d4;
+
+  background-image: linear-gradient(135deg, transparent 31px, #b3b3b3 31px);
+  cursor: default;
+}
+
+.cards_item--disabled .cards_item__content {
+  background-image: linear-gradient(135deg, transparent 30px, rgba(255, 255, 255, 0.5) 30px), url("../img/cat.jpg"), linear-gradient(135deg, transparent 30px, #ffffff 30px);
+}
+
+.cards_item--disabled .cards_item__description,
+.cards_item--disabled .cards_item__advantages {
+  color: #d4d4d4;
+}
+
+.cards_item--disabled .cards_item__price {
+  background-color: #b3b3b3;
+}
+
+.cards_item--disabled ~ .cards_item__caption {
+  color: #ffff66;
 }
 
 /* prototype */
