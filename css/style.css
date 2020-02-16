@@ -44,7 +44,6 @@ body {
   text-align: center;
 
   margin: 0;
-  margin-bottom: 27px;
 }
 
 /* cards list */
@@ -59,15 +58,17 @@ body {
   list-style: none;
 }
 
-.cards li {
+.cards > li {
   position: relative;
 
   display: flex;
-  margin-right: 84px;
+  margin-right: 80px;
+  margin-bottom: 30px;
+  padding-top: 27px;
 }
 
-.cards li:last-child {
-  margin-right: 4px;
+.cards > li:last-child {
+  margin-right: 0;
 }
 
 /* cards - item */
@@ -145,8 +146,8 @@ body {
 
 .cards_item__price {
   position: absolute;
-  bottom: 11px;
-  right: 11px;
+  bottom: 15px;
+  right: 15px;
 
   display: flex;
   flex-direction: column;
@@ -174,7 +175,7 @@ body {
 .cards_item__caption {
   position: absolute;
   left: 0;
-  bottom: -34px;
+  bottom: -30px;
 
   display: none;
   width: 100%;
@@ -279,25 +280,4 @@ body {
 
 .cards_item--disabled ~ .cards_item__caption {
   color: #ffff66;
-}
-
-/* prototype */
-
-.prototype {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  display: none;
-  width: 1120px;
-  height: 565px;
-  margin-left: -560px;
-  margin-top: -282px;
-
-  background-image: url("../../funbox/prototype.jpg");
-  background-repeat: no-repeat;
-  background-position: center calc(50% + 17px);
-  opacity: 0;
-  /* opacity: 0.5; */
-  z-index: 1;
 }
