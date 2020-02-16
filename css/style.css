@@ -172,6 +172,7 @@ body {
   left: 0;
   bottom: -34px;
 
+  display: none;
   width: 100%;
   margin: 0;
 
@@ -205,20 +206,18 @@ body {
   background-color: #2ea8e6;
 }
 
-.cards_item__caption a:hover {
+.cards_item__caption a:hover,
+.cards_item__caption a:active,
+.cards_item__caption a:focus {
   color: #2ea8e6;
   border-bottom-color: #2ea8e6;
 }
 
 /* cards item - elements states */
 
-.cards_item__caption--selected,
-.cards_item__caption--disabled {
-  display: none;
-}
-
-.cards_item--selected .cards_item__caption--selected,
-.cards_item--disabled .cards_item__caption--disabled {
+.cards_item--default ~ .cards_item__caption--default,
+.cards_item--selected ~ .cards_item__caption--selected,
+.cards_item--disabled ~ .cards_item__caption--disabled {
   display: block;
 }
 
