@@ -243,15 +243,15 @@ body {
 
 /* cards item - default */
 
-.product_checkbox:not(:checked):not(:disabled) ~ .default {
+.product_checkbox:not(:checked):not(:disabled) ~ .cards_item__caption.default {
   display: block;
 }
 
-.cards_item:hover {
+.cards_item:not(.just_selected):hover {
   background-image: linear-gradient(135deg, transparent 31px, #2ea8e6 31px);
 }
 
-.cards_item:hover .cards_item__price {
+.cards_item:not(.just_selected):hover .cards_item__price {
   background-color: #2ea8e6;
 }
 
@@ -264,15 +264,6 @@ body {
 
 /* cards item - selected */
 
-.product_checkbox:checked ~ .cards_item:not(.just_selected):hover .default {
-  display: none;
-}
-
-.product_checkbox:checked ~ .cards_item:not(.just_selected):hover .selected,
-.product_checkbox:checked ~ .selected {
-  display: block;
-}
-
 .product_checkbox:checked ~ .cards_item {
   background-image: linear-gradient(135deg, transparent 31px, #d91667 31px);
 }
@@ -281,17 +272,26 @@ body {
   background-color: #d91667;
 }
 
-.product_checkbox:checked ~ .cards_item:hover {
+.product_checkbox:checked ~ .cards_item:not(.just_selected):hover {
   background-image: linear-gradient(135deg, transparent 31px, #e62e7a 31px);
 }
 
-.product_checkbox:checked ~ .cards_item:hover .cards_item__price {
+.product_checkbox:checked ~ .cards_item:not(.just_selected):hover .cards_item__price {
   background-color: #e62e7a;
+}
+
+.product_checkbox:checked ~ .cards_item:not(.just_selected):hover .default {
+  display: none;
+}
+
+.product_checkbox:checked ~ .cards_item:not(.just_selected):hover .selected,
+.product_checkbox:checked ~ .cards_item__caption.selected {
+  display: block;
 }
 
 /* cards item - disabled */
 
-.product_checkbox:disabled ~ .disabled {
+.product_checkbox:disabled ~ .cards_item__caption.disabled {
   display: block;
 }
 
